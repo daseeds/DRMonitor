@@ -152,7 +152,7 @@ class OrderPage(BaseHandler):
 class fillDB(BaseHandler):
    	def get(self):
 
-   		ndb.delete_multi(ndb.Query(default_options=ndb.QueryOptions(keys_only=True)))
+   		#ndb.delete_multi(ndb.Query(default_options=ndb.QueryOptions(keys_only=True)))
 
    		for x in range(0, 10):
 			session=Session()
