@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h2>Running Sessions</h2>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>DataFlow</th>
+          <th>Orders</th>
+          <th>WorkOrders</th>
+          <th>Cards</th>
+          <th>Modules</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for session in sessionsRunning %}
+        <tr>
+          <th scope="row"><a href="/session/{{session.key.id()}}">{{session.key.id()}}</a></th>
+          <td>{{session.account}}</td>
+          <td>{{session.dataFlow}}</td>
+          <td>{{session.orders}}</td>
+          <td>{{session.workOrders}}</td>
+          <td>{{session.cards}}</td>
+          <td>{{session.moduleStatuses}}</td>
+          <td>{{session.status}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+<h2>Finished Sessions</h2>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>DataFlow</th>
+          <th>Orders</th>
+          <th>WorkOrders</th>
+          <th>Cards</th>
+          <th>Modules</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      	{% for session in sessionsFinished %}
+        <tr>
+          <th scope="row"><a href="/session/{{session.key.id()}}">{{session.key.id()}}</a></th>
+          <td>{{session.account}}</td>
+          <td>{{session.dataFlow}}</td>
+          <td>{{session.orders}}</td>
+          <td>{{session.workOrders}}</td>
+          <td>{{session.cards}}</td>
+          <td>{{session.moduleStatuses}}</td>
+          <td>{{session.status}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+{% endblock content %}
